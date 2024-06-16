@@ -48,9 +48,11 @@ const displayWeather = (data) => {
 
     showImage();
   }
+
 }
 
 const displayHourlyForecast = (hourlyData) => {
+  
   const hourlyForecastDiv = document.getElementById('hourly-forecast');
 
   const next24Hours = hourlyData.slice(0, 8); // Display the next 24 hours (3-hour intervals)
@@ -70,8 +72,24 @@ const displayHourlyForecast = (hourlyData) => {
       </div>
     `;
 
-    hourlyForecastDiv.appendChild(hourlyItemHtml);
+    const hourDiv = document.createElement('div');
+    const hourSpan = document.createElement('span');
+    const tempSpan = document.createElement('span');
+    const hourIcon = document.createElement('img');
+
+    hourSpan.textContent = `${hour}:00`;
+    tempSpan.textContent = `${temperature}°C`
+
+    hourIcon.src = iconUrl;
+    hourIcon.alt = 'Hourly Weather Icon';
+
+    hourDiv.classList.add('hourly-item');
+    hourDiv.appendChild(hourSpan);
+    hourDiv.appendChild(hourIcon);
+    hourDiv.appendChild(tempSpan);
+    hourlyForecastDiv.appendChild(hourDiv);
   });
+
 }
 
 const getWeather = () => {
