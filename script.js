@@ -70,7 +70,7 @@ const displayHourlyForecast = (hourlyData) => {
     const hourIcon = document.createElement('img');
 
     hourSpan.textContent = `${hour}:00`;
-    tempSpan.textContent = `${temperature}°C`
+    tempSpan.textContent = `${temperature} °C`
 
     hourIcon.src = iconUrl;
     hourIcon.alt = 'Hourly Weather Icon';
