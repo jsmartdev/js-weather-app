@@ -13,7 +13,7 @@ const showImage = () => {
 
 const displayWeather = (data) => {
 
-  const tempDiv = document.getElementById('temperature');
+  const tempDiv = document.getElementById('temp-div');
   const weatherInfoDiv = document.getElementById('weather-info');
   const weatherIcon = document.getElementById('weather-icon');
   const hourlyForecastDiv = document.getElementById('hourly-forecast');
@@ -33,17 +33,16 @@ const displayWeather = (data) => {
     const iconCode = data.weather[0].icon;
     const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@4x.png`;
 
-    const temperatureHTML = `
-        <p>${temperature}°C</p>
-    `;
-
-    const weatherHtml = `
-        <p>${cityName}</p>
-        <p>${description}</p>
-    `;
-
-    tempDiv.appendChild(temperatureHTML);
-    weatherInfoDiv.appendChild(weatherHtml);
+    const tempParagraph =  document.createElement('p');
+    const cityParagraph = document.createElement('p');
+    const descriptionParagraph = document.createElement('p');
+    tempParagraph.textContent = `${temperature}°C`;
+    cityParagraph.textContent = `${cityName}`;
+    descriptionParagraph.textContent = `${description}`
+    
+    tempDiv.appendChild(tempParagraph);
+    weatherInfoDiv.appendChild(cityParagraph);
+    weatherInfoDiv.appendChild(descriptionParagraph);
     weatherIcon.src = iconUrl;
     weatherIcon.alt = description;
 
