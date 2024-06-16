@@ -12,6 +12,7 @@ body {
   height: 100vh;
   margin: 0;
   font-size: 20px;
+  background-color: blueviolet;
 }
 
 #weather-container {
@@ -19,6 +20,7 @@ body {
   padding: 1rem;
   border-radius: 0.75rem;
   text-align: center;
+  background-color: darkslateblue;
 }
 
 h1, label, p {
@@ -45,3 +47,48 @@ button {
   font-size: 0.75rem;
 }
 
+#temperature p {
+  font-size: 3rem;
+  margin-top: -1.5rem;
+}
+
+#weather-info {
+  font-size: 1rem;
+}
+
+#weather-icon {
+  width: 10rem;
+  height: 10rem;
+  margin: 0 auto 0.5rem;
+  margin-bottom: 0;
+  display: none;
+}
+
+#hourly-forecast {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.hourly-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 0.5rem;
+  color: white;
+  flex: 0 0 auto;
+  width: 4rem;
+}
+
+.hourly-item img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+#hourly-heading {
+  color: #fff;
+  margin-top: 0.5rem;
+}
