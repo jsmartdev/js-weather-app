@@ -36,7 +36,7 @@ const displayWeather = (data) => {
     const tempParagraph =  document.createElement('p');
     const cityParagraph = document.createElement('p');
     const descriptionParagraph = document.createElement('p');
-    tempParagraph.textContent = `${temperature}°C`;
+    tempParagraph.textContent = `${temperature} °C`;
     cityParagraph.textContent = `${cityName}`;
     descriptionParagraph.textContent = `${description}`
     
