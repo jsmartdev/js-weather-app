@@ -25,13 +25,18 @@ const displayWeather = (data) => {
   if (data.cod === '404') {
     const paragraph = document.createElement('p');
     paragraph.textContent = data.message;
+    console.log(data);
     weatherInfoDiv.appendChild(paragraph);
+    
   } else {
     const cityName = data.name;
     const temperature = Math.round(data.main.temp - 273.15); // Convert to Celsius
     const description = data.weather[0].description;
     const iconCode = data.weather[0].icon;
     const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@4x.png`;
+    
+    const words = data.message;
+    console.log(words);
 
     const tempParagraph =  document.createElement('p');
     const cityParagraph = document.createElement('p');
@@ -45,6 +50,7 @@ const displayWeather = (data) => {
     weatherInfoDiv.appendChild(descriptionParagraph);
     weatherIcon.src = iconUrl;
     weatherIcon.alt = description;
+    
 
     showImage();
   }
